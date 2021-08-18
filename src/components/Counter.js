@@ -2,6 +2,7 @@ import classes from './Counter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 
+import { counterActions } from '../store/index';
 const Counter = () => {
   const dispatch = useDispatch();
 
@@ -14,19 +15,19 @@ const Counter = () => {
   const [step, setStep] = useState('');
 
   function incHandler() {
-    dispatch({ type: 'increment' });
+    dispatch(counterActions.increment());
   }
 
   function increaseHandler() {
-    dispatch({ type: 'increase', amount: Number(step) });
+    dispatch(counterActions.increase(Number(step))); // {type: SOME_UNIQUE_IDENTIFIER, payload: Number(step)}
   }
 
   function decHandler() {
-    dispatch({ type: 'decrement' });
+    dispatch(counterActions.decrement());
   }
 
   const toggleCounterHandler = () => {
-    dispatch({ type: 'toggle' });
+    dispatch(counterActions.toggleCounter());
   };
 
   return (
@@ -100,3 +101,21 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 
  */
+
+/* OLD WAY OF DISPATCHING ACTIONS, WITHOUT TOOLKIT
+  function incHandler() {
+    dispatch({ type: 'increment' });
+  }
+
+  function increaseHandler() {
+    dispatch({ type: 'increase', amount: Number(step) });
+  }
+
+  function decHandler() {
+    dispatch({ type: 'decrement' });
+  }
+
+  const toggleCounterHandler = () => {
+    dispatch({ type: 'toggle' });
+  };
+*/
