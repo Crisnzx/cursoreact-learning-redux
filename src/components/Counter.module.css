@@ -11,17 +11,22 @@
 .counter h1 {
   text-transform: uppercase;
   color: #575757;
-  margin: 0;
+  margin: 0 0 2rem;
   font-size: 1rem;
 }
 
 .value {
   font-size: 2rem;
   color: #3c0080;
-  margin: 2rem 0;
+  margin: 0 0 2rem;
   font-weight: bold;
 }
 
 .counter button {
   margin: 0 1rem 1.5rem;
+}
+
+.counter input {
+  width: 100px;
+  padding: 5px;
 }
