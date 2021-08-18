@@ -2,7 +2,7 @@ import classes from './Counter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-import { counterActions } from '../store/index';
+import { counterActions } from '../store/counter-slice';
 const Counter = () => {
   const dispatch = useDispatch();
 
@@ -10,8 +10,8 @@ const Counter = () => {
   // so we'll always have the latest snapshot of the state
   // if the component is removed from the DOM, the subscription will be removed too
   // this hook will return only the data you really need for this component, that's why we have to pass a function.
-  const counter = useSelector(state => state.counter);
-  const showCounter = useSelector(state => state.showCounter);
+  const counter = useSelector(state => state.counter.counter);
+  const showCounter = useSelector(state => state.counter.showCounter);
   const [step, setStep] = useState('');
 
   function incHandler() {
