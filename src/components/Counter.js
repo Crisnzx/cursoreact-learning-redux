@@ -18,12 +18,12 @@ const Counter = () => {
     dispatch(counterActions.increment());
   }
 
-  function increaseHandler() {
-    dispatch(counterActions.increase(Number(step))); // {type: SOME_UNIQUE_IDENTIFIER, payload: Number(step)}
-  }
-
   function decHandler() {
     dispatch(counterActions.decrement());
+  }
+
+  function increaseHandler() {
+    dispatch(counterActions.increase(Number(step))); // {type: SOME_UNIQUE_IDENTIFIER, payload: Number(step)}
   }
 
   const toggleCounterHandler = () => {

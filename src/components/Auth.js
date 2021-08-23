@@ -4,7 +4,6 @@ import { authActions } from '../store/auth-slice';
 
 const Auth = () => {
   const dispatch = useDispatch();
-
   function submitFormHandler(e) {
     e.preventDefault();
 
